@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1529433294 source:c:\users\dwai\c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"sources.h"
+	"merge_sort.h"
+
+1528983915 source:c:\users\dwai\c\src\bubble_sort.cpp
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
+1529433582 c:\users\dwai\c\include\sources.h
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
+1529092174 c:\users\dwai\c\include\merge_sort.h
+	<stdio.h>
+	<stdlib.h>
+
+1529091193 source:c:\users\dwai\c\src\mergesort.cpp
+	<stdio.h>
+
+1529887507 source:c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"sources.h"
+	"merge_sort.h"
+
+1529887507 c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\include\sources.h
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
+1529092174 c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\include\merge_sort.h
+	<stdio.h>
+	<stdlib.h>
+

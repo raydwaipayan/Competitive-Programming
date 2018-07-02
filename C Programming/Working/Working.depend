@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1530554837 source:c:\users\dwai\working\main.c
+	<stdio.h>
+	<stdlib.h>
+
