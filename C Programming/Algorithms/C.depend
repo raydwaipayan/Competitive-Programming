@@ -23,12 +23,13 @@
 1529091193 source:c:\users\dwai\c\src\mergesort.cpp
 	<stdio.h>
 
-1529887507 source:c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\main.c
+1531144170 source:c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	"sources.h"
 	"merge_sort.h"
+	"shell_sort.h"
 
 1529887507 c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\include\sources.h
 	<stdio.h>
@@ -38,4 +39,6 @@
 1529092174 c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\include\merge_sort.h
 	<stdio.h>
 	<stdlib.h>
+
+1531144944 c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\include\shell_sort.h
 

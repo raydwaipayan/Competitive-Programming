@@ -3,6 +3,8 @@
 #include <ctype.h>
 #include "sources.h"
 #include "merge_sort.h"
+#include "shell_sort.h"
+#include "insertion_sort.h"
 #define max 10
 int arr[max];
 int main()
@@ -11,6 +13,7 @@ int main()
     printf("2. Selection Sort\n");
     printf("3. Merge Sort\n");
     printf("4. Insertion Sort\n");
+    printf("5. Shell Sort\n");
 
     printf("Enter your choice :: ");
     int c;
@@ -26,6 +29,7 @@ int main()
         case 2: selection_sort(arr);break;
         case 3: merge_sort(arr);break;
         case 4: insertion_sort(arr);break;
+        case 5: shell_sort(arr);break;
         default: printf("Wrong choice entered\n");
     }
     for(int i=0;i<10;i++)
