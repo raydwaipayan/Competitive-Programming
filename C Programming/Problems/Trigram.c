@@ -20,10 +20,10 @@ int main()
             {
                 freq[cf++]=findfreq(c,c2);
                 count=0;
-                if(i==len-1)
+                if(i==len-2)
                     break;
                 i=first;
-                *c="";c2=0;
+                strcpy(c," ");c2=0;
             }
         }
         else{
@@ -57,10 +57,10 @@ int findfreq(char *a,int len)
                 if(strcmp(a,c)==0)
                     freq++;
                 count=0;
-                if(i==len-1)
+                if(i==len-2)
                     break;
                 i=first;
-                *c="";c2=0;
+                strcpy(c," ");c2=0;
             }
         }
         else
