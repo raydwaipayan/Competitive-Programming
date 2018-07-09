@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.regex.*;
 public class Trigram {
 
 	public static void main(String[] args) {
