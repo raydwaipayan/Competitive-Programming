@@ -1,6 +1,7 @@
+#ifndef SOURCES_H_INCLUDED
+#define SOURCES_H_INCLUDED
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 //The following code sample will deal with bubble sort
 int bubble_sort(int arr[])
 {
@@ -43,3 +44,7 @@ int selection_sort(int arr[])
 }
 
 
+
+
+
+#endif // SOURCES_H_INCLUDED

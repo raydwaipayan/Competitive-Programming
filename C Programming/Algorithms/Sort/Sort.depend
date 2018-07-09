@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1531149217 source:c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\sort\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"sources.h"
+	"merge_sort.h"
+	"shell_sort.h"
+	"insertion_sort.h"
+	"quick_sort.h"
+
+1531149361 c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\sort\include\sources.h
+	<stdio.h>
+	<stdlib.h>
+
+1531149118 c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\sort\include\merge_sort.h
+	<stdio.h>
+	<stdlib.h>
+
+1531149217 c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\sort\include\shell_sort.h
+
+1531149118 c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\sort\include\insertion_sort.h
+
+1531149118 c:\users\dwai\documents\github\competitive-programming\c programming\algorithms\sort\include\quick_sort.h
+

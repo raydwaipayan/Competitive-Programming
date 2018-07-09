@@ -15,6 +15,7 @@ int quicksort(int arr[],int low, int high)
         quicksort(arr,p+1,high);
     }
 }
+//this algorithm set uses lomuto partition scheme
 int part(int arr[], int low, int high)
 {
     int pivot=arr[high];

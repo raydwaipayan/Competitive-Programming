@@ -1,3 +1,5 @@
+#ifndef MERGE_SORT_H_INCLUDED
+#define MERGE_SORT_H_INCLUDED
 #define max 10
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,3 +49,7 @@ void merging(int low, int mid, int high)
         *(a+i)=b[i];
     }
 }
+
+
+
+#endif // MERGE_SORT_H_INCLUDED
