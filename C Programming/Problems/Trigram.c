@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <string.h>
+char *a;
+int len;
 int main()
 {
     puts("Enter a string");
-    char *a;
+    a=(char*)malloc(100*sizeof(char));
     gets(a);
-    int len=strlen(a);
+    len=strlen(a);
     register int i;
-    int count=0;char *c;int c2=0;
-    int * freq;int cf=0;int first=0;
+    int count=0;char *c=(char*)malloc(40*sizeof(char));int c2=0;
+    int * freq=(int*)malloc(100*sizeof(int));int cf=0;int first=0;
     for(i=0;i<len;i++)
     {
         if(a[i]==' '|| a[i]=='.')
@@ -18,12 +20,15 @@ int main()
                 first=i;
             if(count==3)
             {
-                freq[cf++]=findfreq(c,c2);
+                c[c2]='\0';
+                freq[cf++]=findfreq(c);
                 count=0;
                 if(i==len-2)
                     break;
                 i=first;
-                strcpy(c," ");c2=0;
+                free(c);c2=0;
+
+                c=(char*)malloc(40*sizeof(char));
             }
         }
         else{
@@ -40,12 +45,12 @@ int main()
     printf("Maximum freq. of trigram is %d",max);
 
 }
-int findfreq(char *a,int len)
+int findfreq(char *b)
 {
     int freq=0;int count=0;
     int first=0;
-    char *c;int c2=0;
-    for(register int i=0;i<len;i++)
+    char *c=(char*)malloc(40*sizeof(char));int c2=0;
+    for(register int i=0;i<=len;i++)
     {
         if(a[i]==' '|| a[i]=='.')
         {
@@ -54,13 +59,15 @@ int findfreq(char *a,int len)
                 first=i;
             if(count==3)
             {
-                if(strcmp(a,c)==0)
+                c[c2]='\0';
+                if(strcmp(c,b)==0)
                     freq++;
                 count=0;
                 if(i==len-2)
                     break;
                 i=first;
-                strcpy(c," ");c2=0;
+                free(c);c2=0;
+                c=(char*)malloc(40*sizeof(char));
             }
         }
         else
