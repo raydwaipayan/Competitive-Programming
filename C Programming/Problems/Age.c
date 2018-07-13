@@ -26,4 +26,5 @@ int main(void)
         ay--;
     }
     printf("Your age is %d years %d months %d days",ay,am,ad);
+    return 0;
 }
