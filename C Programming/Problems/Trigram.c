@@ -27,7 +27,7 @@ int main()
                 freq[cf]=findfreq(c);
                 strcpy(trigram[cf++],c);
                 count=0;
-                if(i==len-2)
+                if(i==len-1)
                     break;
                 i=first;
                 free(c);c2=0;
@@ -71,7 +71,7 @@ int findfreq(char *b)
                 if(strcmp(c,b)==0)
                     freq++;
                 count=0;
-                if(i==len-2)
+                if(i==len-1)
                     break;
                 i=first;
                 free(c);c2=0;
