@@ -1,77 +1,65 @@
 #include <bits/stdc++.h>
-#include <algorithm>
+typedef long long int int64;
 using namespace std;
-void simpleSieve(int limit, vector<int> &prime)
+void simpleSieve(int64 limit, vector<int64> &prime, int64 m)
 {
     bool mark[limit+1];
+    memset(mark,true, sizeof(mark));
+    for(int64 p=2;p*p<=limit;p++)
+    {
+        if(mark[p])
+        {
+            for(int64 i=p*2;i<limit;i+=p)
+                mark[i]=false;//unmark all multiples of prime
+        }
+    }
+    for(int64 p=2;p<=limit;p++)
+    {
+        if(mark[p])
+        {
+            prime.push_back(p);
+            if(p>=m)
+                cout<<p<<"\n";//print all those primes greater than m
+        }
+    }
+}
+void segmentedSieve(int64 n, int64 m)
+{
+    int64 limit=floor(sqrt(n))+1;
+    vector<int64> prime;
+    simpleSieve(limit,prime,m);
+    int64 low;
+    int64 high;
+    //optimization by skipping low to the max of limit and m
+    low=max(limit+1,m);
+    high=n;
+
+    bool mark[n-m+1];
     memset(mark,true,sizeof(mark));
 
-    for(int p=2;p*p<limit;p++)
+    for(int64 i=0;i<prime.size();i++)
     {
-        if(mark[p]==true)
-        {
-            for(int i=p*2;i<limit;i+=p)
-                mark[i]=false;
-        }
+        int loLim=floor(low/prime[i])*prime[i];
+        if(loLim<low)
+            loLim+=prime[i];
+        for(int64 j=loLim;j<=high;j+=prime[i])
+            mark[j-low]=false;
     }
-    for(int p=2;p<limit;p++)
-        if(mark[p]==true)
-            prime.push_back(p);
-}
-void segmentedSieve(int limit, vector<int> &prime_all)
-{
-    vector<int>prime;
-    int inisize=sqrt(limit);
-    simpleSieve(inisize,prime);
-    copy(prime.begin(), prime.end(), back_inserter(prime_all));
-    int low=inisize;int high=low*2;
-
-    while(low<limit)
+    for(int64 i=low;i<=high;i++)
     {
-        if(high>limit)
-            high=limit;
-        bool mark[high-low+1];
-        memset(mark, true, sizeof(mark));
-
-        for(int p=2;p<prime.size();p++)
-        {
-            int lolow=ceil(low/prime[p])*prime[p];
-
-            for(int i=lolow;i<high;i+=prime[p])
-            {
-                mark[i-low]=false;
-            }
-        }
-        for(int p=low;p<high;p++)
-            if(mark[p-low])
-                prime_all.push_back(p);
-        low=high;
-        high+=inisize;
+        if(mark[i-low])
+            cout<<i<<"\n";
     }
-
 }
-int main(void)
+int main()
 {
-    vector<int> prime_all;
-    segmentedSieve((int)pow(10,4.5), prime_all);
+    int64 n,m,t;
+    cin>>t;
 
-    int n, n1, n2;
-    cin>>n;
-    for(register int i=0;i<n;i++)
+    while(t--)
     {
-        cin>>n1>>n2;
-
-        for(register int j=n1;j<=n2;j++)
-        {
-            if(j==2)
-                cout<<j<<endl;
-            if(j%2==0)
-                continue;
-            if(binary_search(prime_all.begin(), prime_all.end(), j))
-               cout<<j<<endl;
-        }
-        cout<<endl;
+        cin>>m>>n;
+        segmentedSieve(n,m);
     }
     return 0;
-
 }
