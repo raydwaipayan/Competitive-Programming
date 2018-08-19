@@ -49,7 +49,7 @@ void printAll9(string s)
     cout<<"1";
     cout<<"\n";
 }
-string mirror(string s)
+void mirror(string &s)
 {
     int len=s.length();
     if(len&1)
@@ -65,9 +65,8 @@ string mirror(string s)
         int j=i+1;
         while(i>=0) s[j++]=s[i--];
     }
-    return s;
 }
-string centreIncrement(string s)
+void centreIncrement(string &s)
 {
     int len=s.length();
     if(len&1)
@@ -111,7 +110,6 @@ string centreIncrement(string s)
             s[j]=s[i];
         }
     }
-    return s;
 }
 
 int main()
@@ -130,15 +128,15 @@ int main()
             printAll9(s); continue;}
         if(checkp(s))
         {
-            s=centreIncrement(s);
+            centreIncrement(s);
             cout<<s<<"\n";
         }
         else
         {
             string original=s;
-            s=mirror(s);
+            mirror(s);
             while(original.compare(s)>0)
-                s=centreIncrement(s);
+                centreIncrement(s);
             cout<<s<<"\n";
         }
 
